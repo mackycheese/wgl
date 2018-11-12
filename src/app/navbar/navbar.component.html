@@ -1,0 +1,28 @@
+<nav class="navbar sticky-top navbar-expand navbar-light bg-light">
+  <a class="navbar-brand" href="home">WGL</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" href="login">Log in</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="logout">Log out</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="createuser">Create account</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="about">About</a>
+      </li>
+    <!-- </ul> -->
+    <!-- <ul class="navbar-nav mr-auto"> -->
+      <li class="nav-item"><a class="nav-link">&nbsp; &nbsp; &nbsp; &nbsp;</a></li>
+      <li class="nav-item"><a class="nav-link">Logged in: {{ this.isLoggedIn() }}</a></li>
+      <li *ngIf="isLoggedIn()&&this.currentAccount!=null"><a class="nav-link">Username: {{ this.currentAccount.name }}</a></li>
+    </ul>
+  </div>
+</nav>

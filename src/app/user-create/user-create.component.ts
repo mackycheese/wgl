@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import {  AngularFireDatabase } from '@angular/fire/database'
+import { UserFieldsComponent } from '../user-fields/user-fields.component';
+import { WGLUser } from 'src/wgl_users';
+import { UserService } from '../user.service';
 
 @Component({
   selector: 'app-user-create',
@@ -8,22 +11,22 @@ import {  AngularFireDatabase } from '@angular/fire/database'
 })
 export class UserCreateComponent implements OnInit {
 
-  constructor(db: AngularFireDatabase) {
-    this.db = db;
+  constructor(public db: AngularFireDatabase,public userService:UserService) {
   }
 
-  userName: string;
-  userPassword: string;
-
-  db: AngularFireDatabase;
+  @ViewChild("userFields") userFields: UserFieldsComponent;
 
   ngOnInit() {
   }
 
   createAccount(){
-    console.log(this.userName)
-    console.log(this.userPassword)
-    this.db.list('users').push({name:this.userName,password:this.userPassword})
+    console.log(this.userFields)
+    console.log(this.userFields.user.name)
+    console.log(this.userFields.user.password)
+    var u=new WGLUser();
+    u.name=this.userFields.user.name;
+    u.password=this.userFields.user.password;
+    this.userService.addUser(u)
   }
 
 }

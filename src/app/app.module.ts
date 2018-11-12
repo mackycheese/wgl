@@ -7,13 +7,27 @@ import { AppComponent } from './app.component';
 
 import { AngularFireModule } from '@angular/fire'
 import { environment } from 'src/environments/environment';
-import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFireDatabaseModule, AngularFireDatabase } from '@angular/fire/database';
 import { UserCreateComponent } from './user-create/user-create.component';
+import { AboutComponent } from './about/about.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { UserFieldsComponent } from './user-fields/user-fields.component';
+import { UserLoginComponent } from './user-login/user-login.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { IndexRedirectComponent } from './index-redirect/index-redirect.component';
+import { LogoutComponent } from './logout/logout.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    UserCreateComponent
+    UserCreateComponent,
+    AboutComponent,
+    NavbarComponent,
+    UserFieldsComponent,
+    UserLoginComponent,
+    HomePageComponent,
+    IndexRedirectComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +36,7 @@ import { UserCreateComponent } from './user-create/user-create.component';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule
   ],
-  providers: [],
+  providers: [AngularFireDatabase],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
