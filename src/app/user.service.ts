@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { WGLUser } from '../wgl_users'
+import { WGLUser } from '../wgl_user'
 import { AngularFireDatabase, AngularFireList } from '@angular/fire/database';
 
 @Injectable({
@@ -17,7 +17,7 @@ export class UserService {
     this.getUsers().snapshotChanges().subscribe(function(action){
       action.forEach(element => {
         if(element.key==key){
-          var val=element.payload.val()
+          var val=<any>element.payload.val()
           var u=new WGLUser()
           u.name=val.name
           u.password=val.password
@@ -40,7 +40,7 @@ export class UserService {
         if(shouldExit)return
         var u=new WGLUser()
         u.key=element.key
-        var val=element.payload.val()
+        var val=<any>element.payload.val()
         u.name=val.name
         u.password=val.password
         var res=perUser(u)

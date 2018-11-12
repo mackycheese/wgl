@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import {  AngularFireDatabase } from '@angular/fire/database'
 import { UserFieldsComponent } from '../user-fields/user-fields.component';
-import { WGLUser } from 'src/wgl_users';
+import { WGLUser } from 'src/wgl_user';
 import { UserService } from '../user.service';
 
 @Component({

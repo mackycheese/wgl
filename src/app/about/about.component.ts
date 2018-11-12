@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
-import { WGLUser } from 'src/wgl_users';
+import { WGLUser } from 'src/wgl_user';
 import { UserService } from '../user.service';
 
 @Component({

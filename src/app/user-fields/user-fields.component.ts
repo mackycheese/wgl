@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { WGLUser } from '../../wgl_users';
+import { WGLUser } from '../../wgl_user';
 
 @Component({
   selector: 'app-user-fields',

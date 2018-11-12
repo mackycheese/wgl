@@ -1,7 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { UserFieldsComponent } from '../user-fields/user-fields.component';
 import { UserService } from '../user.service';
-import { WGLUser } from 'src/wgl_users';
+import { WGLUser } from 'src/wgl_user';
 import { Router } from '@angular/router';
 
 @Component({

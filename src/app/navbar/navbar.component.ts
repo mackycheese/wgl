@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/database';
 import { UserService } from '../user.service';
-import { WGLUser } from 'src/wgl_users';
+import { WGLUser } from 'src/wgl_user';
 
 @Component({
   selector: 'app-navbar',
